@@ -10,4 +10,5 @@
 
 .vagrant/
 cookbooks/
+site-cookbooks/
 Cheffile.lock
