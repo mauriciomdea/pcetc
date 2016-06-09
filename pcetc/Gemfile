@@ -41,5 +41,9 @@ group :development, :test do
   gem 'spring'
   # Guard is a command line tool to easily handle events on file system modifications. http://guardgem.org
   gem 'guard'
+  # rspec-rails is a testing framework for Rails 3.x and 4.x
+  gem 'rspec-rails', '~> 3.4'
+  # A library for setting up Ruby objects as test data. https://thoughtbot.com/open-source
+  gem "factory_girl_rails", "~> 4.0"
 end
 
