@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  # Authentication
+  devise_for :storekeepers, 
+              controllers: { sessions: 'storekeepers/sessions', registrations: 'storekeepers/registrations', confirmations: 'storekeepers/confirmations', passwords: 'storekeepers/passwords', unlocks: 'storekeepers/unlocks'  }, 
+              path: 'lojistas', 
+              path_names: { sign_in: 'entrar', sign_out: 'sair', password: 'nova_senha', confirmation: 'confirmar', unlock: 'desbloquear', registration: 'cadastro', sign_up: 'novo' }
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
