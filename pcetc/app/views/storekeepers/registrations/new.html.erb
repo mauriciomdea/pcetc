@@ -1,29 +1,199 @@
-<h2>Sign up</h2>
+<style type="text/css">
+  /* Move down content because we have a fixed navbar that is 50px tall */
+  body {
+    height: 100%;
+    min-height: 100%;
+    background-color: #eeeeee;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
+  strong {
+    font-weight: 600;
+  }
+  .fill { 
+    min-height: 100%;
+    height: 100%;
+    box-sizing:border-box;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: #ffffff; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    font-size: 14px; 
+    padding-top: 25px
+  }
+  .navbar-default .navbar-nav > li > a:hover, 
+  .navbar-default .navbar-nav > li > a:focus {
+    color: #eeeeee;
+  }
+  .nav .open > a,
+  .nav .open > a:hover,
+  .nav .open > a:focus {
+    background-color: inherit;
+    border-color: inherit;
+  }
+  .nav .open > a:hover,
+  .nav .open > a:focus {
+    background-color: inherit;
+    border-color: inherit;
+  }
+  .navbar-default .navbar-nav > .open > a,
+  .navbar-default .navbar-nav > .open > a:hover,
+  .navbar-default .navbar-nav > .open > a:focus {
+    color: #ccc;
+    background-color: inherit;
+  }
+  .navbar-nav > li > .dropdown-menu {
+    margin-top: 0;
+    margin-right: 10px;
+    min-width: 360px;
+    padding: 8px 12px;
+  }
+  .dropdown-header {
+    padding: 4px 0;
+  }
+  .panel {
+    /*margin-bottom: 30px;
+    border: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;*/
+  }
+  .panel-default > .panel-heading {
+    background-color: #ffffff;
+  }
+</style>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<nav class="navbar navbar-default navbar-static-top" style="height: 70px; margin: 0; background-color: #38a4dd; color: #ffffff; border: 0;">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Menu</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <span style="font-size: 37px; line-height: 38px; font-weight: 700; color: #ffffff;">PC<span style="color: rgba(255,255,255,0.8);">&ETC</span></span>
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #ffffff;">Categorias <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <div class="row">
+              <div class="col-md-6">
+                <li class="dropdown-header">PC</li>
+                <li><a href="#">Processadores</a></li>
+                <li><a href="#">Placas-mãe</a></li>
+                <li><a href="#">Memórias</a></li>
+                <li><a href="#">Placas de vídeo</a></li>
+                <li><a href="#">Armazenamento</a></li>
+                <li><a href="#">Monitores</a></li>
+                <li><a href="#">Gabinetes</a></li>
+                <li><a href="#">Fontes</a></li>
+                <li><a href="#">Acessórios</a></li>
+                <li><a href="#">Software</a></li>
+              </div>
+              <div class="col-md-6">
+                <li class="dropdown-header">ETC</li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Celulares</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Desktops</a></li>
+                <li><a href="#">Redes</a></li>
+                <li><a href="#">Câmeras</a></li>
+                <li><a href="#">Impressoras</a></li>
+                <li><a href="#">Capas</a></li>
+                <li><a href="#">Serviços</a></li>
+              </div>
+            </div>
+          </ul>
+        </li>
+        <!-- <li><a href="#usuarios" class="navbar-link" data-toggle="modal" data-target="#modalLogin">Login</a></li> -->
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="input-group" style="margin-top: 10px;">
+          <input type="text" size="40" class="form-control input-md" placeholder="Pesquisa por componente ou produto" style="border: 1px #ffffff;">
+          <span class="input-group-btn">
+            <button class="btn btn-md btn-primary" type="button"><i class="glyphicon glyphicon-search" style="border: 1px solid #337ab7;"></i></button>
+          </span>
+        </div>
+      </form>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="row" style="background-color: #ffffff; padding-top: 35px; padding-bottom: 35px;">
+  <div class="container">
+    <div class="col-md-6">
+      <h1 style="margin-top: 0; line-height: 150%;">Não fique de fora,<br>cadastre já a sua loja!</h1>
+      <h3><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color: Green;"></span> Razão número um!</h3>
+      <p>O PC&ETC tem milhões de visitantes por mês, sendo 
+        que as pessoas que visitam o site, ou estão procurando informações sobre 
+        onde comprar, ou são pessoal técnico com grande poder de influenciar compras 
+        de terceiros!</p>
+      <h3><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color: Green;"></span> Razão número dois!</h3>
+      <p>O PC&ETC possui visitantes de todos os estados do Brasil, e portanto, 
+        existem oportunidades para todos!</p>
+        <h3><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color: Green;"></span> Razão número três!</h3>
+      <p>Completamente grátis para o lojista por 30 dias, podendo ser cancelado à qualquer momento sem obrigação de fidelidade.</p>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="form-group">
+              <label>Nome da loja</label>
+              <input type="text" class="form-control" id="exampleInput1" placeholder="">
+            </div>
+            <div class="form-group">
+              <label>Telefone comercial</label>
+              <input type="text" class="form-control" id="exampleInput4" placeholder="(__) ____-____">
+            </div>
+            <div class="form-group">
+              <%= f.label "Nome do responsável" %>
+              <%= f.text_field :name, autofocus: true,  class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label "Email do responsável" %>
+              <%= f.email_field :email, autofocus: true,  class: "form-control" %>
+            </div>
+
+            <!-- <div class="form-group">
+              <%= f.label "Senha" %>
+              <% if @minimum_password_length %>
+              <em>(mínimo de <%= @minimum_password_length %>)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off",  class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Confirmar senha" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off",  class: "form-control" %>
+            </div> -->
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" checked="true"> Concordo com os <a href="#">Termos de Uso</a>.
+              </label>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Cadastrar", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+
+          <!-- <%= render "storekeepers/shared/links" %> -->
+
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "storekeepers/shared/links" %>
+<%= render "shared/footer" %>

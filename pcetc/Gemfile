@@ -47,5 +47,11 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
 end
 
+# Ruby gem for automatically transforming JSX and using React in Rails.
+gem 'react-rails'
+
 # Flexible authentication solution for Rails with Warden. http://blog.plataformatec.com.br/tag/devise/
 gem 'devise', "~> 4.1"
+
+# Searchkick learns what your users are looking for. As more people search, it gets smarter and the results get better.
+gem 'searchkick'
